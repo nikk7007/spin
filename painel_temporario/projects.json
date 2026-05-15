@@ -1,0 +1,9 @@
+[
+  {
+    "id": "spin",
+    "title": "Spin",
+    "icon": "circle",
+    "description": "Projeto interativo com animações",
+    "path": "/public/spin/"
+  }
+]
