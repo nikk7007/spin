@@ -1,9 +1,9 @@
 [
   {
     "id": "spin",
-    "title": "Spin",
+    "title": "Roleta",
     "icon": "circle",
-    "description": "Projeto interativo com animações",
+    "description": "Ela mostra o que está destinado",
     "path": "./public/spin/"
   }
 ]
