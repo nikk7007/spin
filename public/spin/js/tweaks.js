@@ -44,15 +44,8 @@
     paletteGroup.appendChild(swatchGrid);
     body.appendChild(paletteGroup);
 
-    // wheel style
-    body.appendChild(buildRadio('Estilo dos setores', state.wheelStyle, [
-      { value: 'solid', label: 'Sólido' },
-      { value: 'alternating', label: 'Alternado' },
-      { value: 'ringed', label: 'Radial' }
-    ], (v) => onChange('wheelStyle', v)));
-
     // spin power
-    body.appendChild(buildSlider('Força do giro', state.spinPower, 20, 100, 5, (v) => onChange('spinPower', v)));
+    body.appendChild(buildSlider('Força do giro', state.spinPower, 20, 100, 1, (v) => onChange('spinPower', v)));
 
     // toggles
     body.appendChild(buildToggle('Som', state.sound, (v) => onChange('sound', v)));
