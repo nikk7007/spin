@@ -52,6 +52,7 @@
     body.appendChild(buildToggle('Confete ao vencer', state.confetti, (v) => onChange('confetti', v)));
     body.appendChild(buildToggle('Histórico', state.showHistory, (v) => onChange('showHistory', v)));
     body.appendChild(buildToggle('Remover vencedor automaticamente', state.removeOnWin, (v) => onChange('removeOnWin', v)));
+    body.appendChild(buildToggle('Modo Troll 😈', state.troll, (v) => onChange('troll', v)));
   }
 
   function buildRadio(label, value, options, onChange) {

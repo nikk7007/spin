@@ -70,12 +70,21 @@
     return params.get('palette');
   };
 
-  Storage.buildShareURL = (items, palette) => {
+  Storage.tweaksFromURL = () => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const cfg = params.get('cfg');
+      if (!cfg) return null;
+      return JSON.parse(cfg);
+    } catch (e) { return null; }
+  };
+
+  Storage.buildShareURL = (items, tweaks) => {
     const url = new URL(window.location.href);
     url.search = '';
     const labels = items.map(it => encodeURIComponent(it.label)).join(',');
     url.searchParams.set('items', labels);
-    if (palette) url.searchParams.set('palette', palette);
+    if (tweaks) url.searchParams.set('cfg', JSON.stringify(tweaks));
     return url.toString();
   };
 

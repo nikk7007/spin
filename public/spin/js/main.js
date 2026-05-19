@@ -9,6 +9,10 @@
   let wheel, spinner, fx;
   let lastWinnerId = null;
   let selectedPresetId = null;
+  let trollActive = false;
+  let trollStartTime = 0;
+  let trollRafId = null;
+  const TROLL_DURATION = 30000;
 
   const PRESETS = [
     {
@@ -154,14 +158,14 @@
   function init() {
     // Theme
     const savedTheme = window.SpinStorage.loadTheme();
-    if (savedTheme) document.body.setAttribute("data-theme", savedTheme);
-    else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.body.setAttribute("data-theme", "dark");
-    }
+    document.body.setAttribute("data-theme", savedTheme || "dark");
 
     // Tweaks
     const savedTweaks = window.SpinStorage.loadTweaks();
     if (savedTweaks) tweaks = Object.assign({}, tweaks, savedTweaks);
+    const urlTweaks = window.SpinStorage.tweaksFromURL();
+    if (urlTweaks) tweaks = Object.assign({}, tweaks, urlTweaks);
+    // backward compat: old links usam ?palette=
     if (urlPalette && window.Utils.PALETTES[urlPalette]) {
       tweaks.palette = urlPalette;
     }
@@ -257,9 +261,13 @@
         window.Utils.toast("Adicione itens primeiro");
         return;
       }
-      if (spinner.spinning) return;
+      if (spinner.spinning || trollActive) return;
       window.Utils.sound.click();
-      spinner.spin();
+      if (tweaks.troll) {
+        startTrollMode();
+      } else {
+        spinner.spin();
+      }
     };
     document.getElementById("btn-spin").addEventListener("click", triggerSpin);
     // make the whole wheel clickable too
@@ -482,6 +490,39 @@
       window.SpinStorage.saveItems(items);
       renderList();
     }
+  }
+
+  // ---------- troll mode ----------
+  function startTrollMode() {
+    trollActive = true;
+    trollStartTime = Date.now();
+    spinner.spinning = true;
+    spinner._lastSegment = wheel.indexAtPointer();
+    spinner.onStart(); // UI normal: "girando…", lock, etc.
+    trollLoop();
+  }
+
+  function trollLoop() {
+    if (!trollActive) return;
+    const elapsed = Date.now() - trollStartTime;
+    if (elapsed >= TROLL_DURATION) {
+      trollActive = false;
+      spinner.velocity = 0.06 * Math.pow(30, elapsed / TROLL_DURATION);
+      spinner.friction = 0.982;
+      spinner._loop(); // entrega para desaceleração normal
+      return;
+    }
+    const progress = elapsed / TROLL_DURATION;
+    const velocity = 0.06 * Math.pow(30, progress);
+    const TAU = Math.PI * 2;
+    spinner.rotation = ((spinner.rotation || 0) + velocity) % TAU;
+    wheel.setRotation(spinner.rotation);
+    const idx = wheel.indexAtPointer();
+    if (idx !== spinner._lastSegment && idx !== -1) {
+      spinner._lastSegment = idx;
+      spinner.onTick(idx, Math.min(1.5, velocity / 0.2));
+    }
+    trollRafId = requestAnimationFrame(trollLoop);
   }
 
   // ---------- presets ----------
@@ -830,7 +871,7 @@
       window.Utils.toast("Adicione itens primeiro");
       return;
     }
-    const url = window.SpinStorage.buildShareURL(items, tweaks.palette);
+    const url = window.SpinStorage.buildShareURL(items, tweaks);
     try {
       if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {
         await navigator.share({ title: "Spin", text: "minha roleta", url });

@@ -6,7 +6,79 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Spin — roleta dinâmica</title>
+    <title>Spin — Roleta Online Grátis e Personalizável | Sorteador</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Roleta online grátis para sortear qualquer coisa. Adicione seus itens, personalize as cores e gire! Ideal para jogos, decisões e sorteios em grupo."
+    />
+    <meta
+      name="keywords"
+      content="roleta online, roleta grátis, sorteador online, roda da sorte online, roleta personalizável, sortear itens, girar roleta, sorteio online"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Spin" />
+    <link
+      rel="canonical"
+      href="https://nikk7007.github.io/portal/public/spin/"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Spin — Roleta Online Grátis e Personalizável"
+    />
+    <meta
+      property="og:description"
+      content="Roleta online grátis para sortear qualquer coisa. Adicione seus itens, personalize as cores e gire!"
+    />
+    <meta
+      property="og:url"
+      content="https://nikk7007.github.io/portal/public/spin/"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Spin" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Spin — Roleta Online Grátis e Personalizável"
+    />
+    <meta
+      name="twitter:description"
+      content="Roleta online grátis para sortear qualquer coisa. Personalize e gire!"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Spin — Roleta Dinâmica",
+        "description": "Roleta online grátis para sortear qualquer coisa. Adicione seus itens, personalize as cores e gire!",
+        "url": "https://nikk7007.github.io/portal/public/spin/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "pt-BR",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "featureList": [
+          "Adicionar itens personalizados",
+          "Paletas de cores",
+          "Histórico de sorteios",
+          "Compartilhar via link",
+          "Listas prontas"
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +86,12 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Google AdSense — substituir ca-pub-XXXXXXXXXXXXXXXXX pelo seu publisher ID -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body data-theme="light" data-palette="ember">
     <header class="topbar">
@@ -39,7 +117,7 @@
         </span>
         <div class="brand-text">
           <span class="brand-name">Spin</span>
-          <span class="brand-sub">roleta dinâmica</span>
+          <span class="brand-sub">roleta online</span>
         </div>
       </div>
 
@@ -103,6 +181,21 @@
         </button>
       </div>
     </header>
+
+    <!-- Ad: banner horizontal -->
+    <div class="ad-unit ad-unit--banner">
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+        data-ad-slot="1111111111"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
     <main class="layout">
       <!-- WHEEL STAGE -->
@@ -290,6 +383,21 @@
               escolher lista pronta
             </button>
           </div>
+        </div>
+
+        <!-- Ad: sidebar entre painéis -->
+        <div class="ad-unit ad-unit--sidebar">
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+            data-ad-slot="2222222222"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </div>
 
         <div class="panel panel--history" id="history-panel" hidden>
@@ -492,6 +600,7 @@
         showHistory: true,
         wheelStyle: "ringed",
         removeOnWin: false,
+        troll: false,
       } /*EDITMODE-END*/;
     </script>
 
