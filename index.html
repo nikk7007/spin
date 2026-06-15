@@ -6,75 +6,115 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Spin — Roleta Online Grátis e Personalizável | Sorteador</title>
+    <title>Roleta Online Grátis para Sortear Nomes e Itens | Spin</title>
 
     <!-- SEO -->
     <meta
       name="description"
-      content="Roleta online grátis para sortear qualquer coisa. Adicione seus itens, personalize as cores e gire! Ideal para jogos, decisões e sorteios em grupo."
+      content="Roleta online grátis para sortear nomes, itens e tomar decisões. Adicione sua lista, personalize as cores e gire a roda da sorte. Sem cadastro, sem instalar."
     />
     <meta
       name="keywords"
-      content="roleta online, roleta grátis, sorteador online, roda da sorte online, roleta personalizável, sortear itens, girar roleta, sorteio online"
+      content="roleta online, roleta grátis, sorteador online, sortear nomes, roda da sorte online, roleta de nomes, roleta personalizável, sortear itens, girar roleta, sorteio online grátis, roleta de decisão"
     />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Spin" />
-    <link
-      rel="canonical"
-      href="https://nikk7007.github.io/portal/public/spin/"
-    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Nikolas Leme" />
+    <meta name="theme-color" content="#eee6d8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#161412" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://spin.nikolasleme.com.br/" />
+
+    <!-- Favicon / PWA -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Spin — Roleta Online Grátis e Personalizável"
+      content="Roleta Online Grátis para Sortear Nomes e Itens | Spin"
     />
     <meta
       property="og:description"
-      content="Roleta online grátis para sortear qualquer coisa. Adicione seus itens, personalize as cores e gire!"
+      content="Roleta online grátis para sortear nomes, itens e tomar decisões. Adicione sua lista, personalize e gire a roda da sorte. Sem cadastro."
     />
-    <meta
-      property="og:url"
-      content="https://nikk7007.github.io/portal/public/spin/"
-    />
+    <meta property="og:url" content="https://spin.nikolasleme.com.br/" />
+    <meta property="og:image" content="https://spin.nikolasleme.com.br/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Spin — roleta online para sortear" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Spin" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Spin — Roleta Online Grátis e Personalizável"
+      content="Roleta Online Grátis para Sortear Nomes e Itens | Spin"
     />
     <meta
       name="twitter:description"
-      content="Roleta online grátis para sortear qualquer coisa. Personalize e gire!"
+      content="Roleta online grátis para sortear nomes, itens e tomar decisões. Personalize e gire!"
     />
+    <meta name="twitter:image" content="https://spin.nikolasleme.com.br/og-image.png" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Spin — Roleta Dinâmica",
-        "description": "Roleta online grátis para sortear qualquer coisa. Adicione seus itens, personalize as cores e gire!",
-        "url": "https://nikk7007.github.io/portal/public/spin/",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Web",
-        "inLanguage": "pt-BR",
-        "isAccessibleForFree": true,
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "BRL"
-        },
-        "featureList": [
-          "Adicionar itens personalizados",
-          "Paletas de cores",
-          "Histórico de sorteios",
-          "Compartilhar via link",
-          "Listas prontas"
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Spin — Roleta Online",
+            "description": "Roleta online grátis para sortear nomes, itens e tomar decisões. Adicione sua lista, personalize as cores e gire!",
+            "url": "https://spin.nikolasleme.com.br/",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Web",
+            "browserRequirements": "Requires JavaScript",
+            "inLanguage": "pt-BR",
+            "isAccessibleForFree": true,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL"
+            },
+            "featureList": [
+              "Sortear nomes e itens personalizados",
+              "Paletas de cores",
+              "Histórico de sorteios",
+              "Compartilhar via link",
+              "Listas prontas"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "A roleta online é grátis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. A Spin é 100% gratuita, sem cadastro e sem precisar instalar nada. É só abrir, adicionar seus itens e girar."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como sortear nomes na roleta?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Digite cada nome no campo de itens ou cole vários de uma vez no modo em massa. Depois é só clicar em GIRAR para sortear um vencedor aleatório."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "O sorteio é realmente aleatório?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. Cada giro escolhe um item de forma aleatória, com todas as opções tendo a mesma chance de serem sorteadas."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
@@ -94,6 +134,9 @@
     ></script>
   </head>
   <body data-theme="light" data-palette="ember">
+    <h1 class="sr-only">
+      Roleta online grátis para sortear nomes, itens e tomar decisões
+    </h1>
     <header class="topbar">
       <div class="brand">
         <span class="brand-mark" aria-hidden="true">
@@ -415,6 +458,64 @@
         </div>
       </aside>
     </main>
+
+    <!-- SEO CONTENT -->
+    <footer class="seo-content">
+      <div class="seo-inner">
+        <section>
+          <h2>Roleta online grátis para sortear qualquer coisa</h2>
+          <p>
+            A <strong>Spin</strong> é uma roleta online gratuita para
+            <strong>sortear nomes</strong>, itens, prêmios ou tomar qualquer
+            decisão na sorte. Monte sua lista, personalize as cores e gire a
+            roda — sem cadastro, sem instalar nada e direto do navegador, no
+            celular ou no computador.
+          </p>
+        </section>
+
+        <section>
+          <h2>Como usar a roleta</h2>
+          <ol>
+            <li>Adicione seus itens um a um, ou cole vários de uma vez no modo "Em massa".</li>
+            <li>Escolha uma lista pronta se quiser começar mais rápido.</li>
+            <li>Personalize as cores e o estilo da roleta nas configurações.</li>
+            <li>Clique em <strong>GIRAR</strong> e descubra o vencedor.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Para que serve uma roleta de sorteio</h2>
+          <ul>
+            <li>Sortear nomes em rifas, lives e dinâmicas de grupo</li>
+            <li>Decidir onde comer, qual filme assistir ou o que fazer</li>
+            <li>Definir a ordem de uma fila ou de jogadores</li>
+            <li>Escolher tarefas, brincadeiras e desafios de forma aleatória</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Perguntas frequentes</h2>
+          <h3>A roleta online é grátis?</h3>
+          <p>
+            Sim. A Spin é 100% gratuita, sem cadastro e sem precisar instalar
+            nada. É só abrir, adicionar seus itens e girar.
+          </p>
+          <h3>Como sortear nomes na roleta?</h3>
+          <p>
+            Digite cada nome no campo de itens ou cole vários de uma vez no
+            modo em massa. Depois é só clicar em GIRAR para sortear um vencedor
+            aleatório.
+          </p>
+          <h3>O sorteio é realmente aleatório?</h3>
+          <p>
+            Sim. Cada giro escolhe um item de forma aleatória, com todas as
+            opções tendo a mesma chance de serem sorteadas.
+          </p>
+        </section>
+
+        <p class="seo-credit">Spin — roleta online · spin.nikolasleme.com.br</p>
+      </div>
+    </footer>
 
     <!-- RESULT MODAL -->
     <div class="result-overlay" id="result-overlay" hidden>
