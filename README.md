@@ -1,31 +1,30 @@
 # Spin — Roleta Online
 
 Roleta online grátis para sortear nomes, itens e tomar decisões. Site estático
-hospedado no GitHub Pages em **https://spin.nikolasleme.com.br**.
+hospedado na **Hostinger** no domínio **https://spin.nikolasleme.com.br**.
 
 ## Estrutura
 
 - `index.html` — a roleta (app)
 - `css/`, `js/` — estilos e lógica
 - `404.html` — redireciona pra raiz
-- `CNAME` — domínio custom do GitHub Pages
+- `.htaccess` — força HTTPS, página 404, compressão e cache (Apache/LiteSpeed)
 - `robots.txt`, `sitemap.xml` — SEO / indexação
 - `favicon.svg`, `site.webmanifest` — ícone e PWA
 - `og-image.png` — imagem de compartilhamento (1200×630, WhatsApp/Twitter/etc.)
 
-## Como publicar no domínio spin.nikolasleme.com.br
+## Como publicar na Hostinger
 
-1. **GitHub Pages**: em _Settings → Pages_, defina a branch `main` (pasta `/root`).
-   O arquivo `CNAME` já configura o domínio `spin.nikolasleme.com.br`.
+1. **Subdomínio**: no hPanel, em _Domínios → Subdomínios_, crie `spin`
+   (resultando em `spin.nikolasleme.com.br`). Anote a pasta que ele criar
+   (ex.: `public_html/spin`).
 
-2. **DNS** (no painel do domínio `nikolasleme.com.br`): crie um registro
-   **CNAME** apontando o subdomínio para o GitHub Pages:
+2. **Upload**: pelo _Gerenciador de Arquivos_ (ou FTP), envie **todo o conteúdo
+   da pasta** para dentro dessa pasta do subdomínio — incluindo os arquivos
+   ocultos `.htaccess` e `404.html`. Não suba a pasta `.git`.
 
-   | Tipo  | Nome   | Valor                |
-   | ----- | ------ | -------------------- |
-   | CNAME | `spin` | `nikk7007.github.io` |
-
-3. Aguarde a propagação do DNS e marque **Enforce HTTPS** no GitHub Pages.
+3. **SSL**: no hPanel, em _Segurança → SSL_, ative o certificado para o
+   subdomínio. O `.htaccess` já redireciona HTTP → HTTPS.
 
 ## SEO — o que já está configurado
 
