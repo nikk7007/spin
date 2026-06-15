@@ -1,9 +1,0 @@
-[
-  {
-    "id": "spin",
-    "title": "Roleta",
-    "icon": "circle",
-    "description": "Ela mostra o que está destinado",
-    "path": "./public/spin/"
-  }
-]
